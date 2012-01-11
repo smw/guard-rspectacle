@@ -41,7 +41,6 @@ module Guard
       require './spec/spec_helper'
 
       Formatter.info 'RSpectacle is ready!'
-      run_all
     end
 
     # Gets called when the Guard should reload itself.
@@ -77,7 +76,6 @@ module Guard
       passed = Runner.run(clean_paths, cli)
       if passed
         Formatter.notify "Awesome, passing! Will check other specs too.", :image => :success
-        run_all
       else
         Formatter.notify "Try harder, failing.", :image => :failed
       end
